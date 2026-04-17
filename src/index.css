@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-[#070A12] text-slate-200 antialiased;
+    font-feature-settings: "ss01" 1, "ss02" 1, "cv01" 1;
+  }
+
+  /* Ensure native select popups stay readable (Windows/Chromium) */
+  select {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: rgb(226, 232, 240); /* slate-200 */
+  }
+  select option {
+    background-color: rgb(11, 16, 32); /* dark panel */
+    color: rgb(226, 232, 240);
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_12px_60px_rgba(0,0,0,0.45)];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-btn {
+    @apply bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500;
+  }
+}
